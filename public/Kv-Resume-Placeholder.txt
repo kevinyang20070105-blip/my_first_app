@@ -1,0 +1,21 @@
+KV — RÉSUMÉ PLACEHOLDER
+=======================
+
+This placeholder exists so the website's download action can be tested end to end.
+It is not Kv's verified résumé and must be replaced before public promotion.
+
+Current positioning
+-------------------
+Web3 researcher / AI researcher / independent developer / student
+
+Contact
+-------
+Email:  kevinyang20070105@gmail.com
+GitHub: https://github.com/kevinyang20070105-blip
+WeChat: kevin132435y
+
+Replacement steps
+-----------------
+1. Add the verified PDF at public/Kv-Resume.pdf.
+2. Update both résumé links described in README.md.
+3. Remove all placeholder labels only after verifying the content.
