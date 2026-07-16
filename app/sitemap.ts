@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
-import { headers } from "next/headers";
 import { articles, projects } from "./content/site-content";
+import { getSiteUrl } from "./site-url";
+
+export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
-  const baseUrl = `${protocol}://${host}`;
+  const baseUrl = await getSiteUrl();
   const staticRoutes = ["", "/about", "/projects", "/writing", "/contact"];
 
   return [

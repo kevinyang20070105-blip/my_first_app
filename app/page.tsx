@@ -5,10 +5,10 @@ import { LocalizedText } from "./components/LocalizedText";
 import { ProjectCard } from "./components/ProjectCard";
 import { SectionHeading } from "./components/SectionHeading";
 import { articles, capabilities, focusAreas, profile, projects } from "./content/site-content";
+import { withBasePath } from "./site-url";
 
 export const metadata: Metadata = {
   title: "Web3 × AI Researcher & Independent Builder",
-  alternates: { canonical: "/" },
 };
 
 export default function Home() {
@@ -60,7 +60,7 @@ export default function Home() {
                 <span className="lang lang-en" lang="en">Get in touch</span>
               </Link>
             </div>
-            <a className="resume-link" href="/Kv-Resume-Placeholder.txt" download>
+            <a className="resume-link" href={withBasePath("/Kv-Resume-Placeholder.txt")} download>
               <span className="lang lang-zh">下载简历（占位文件）</span>
               <span className="lang lang-en" lang="en">Download résumé (placeholder)</span>
               <span aria-hidden="true">↓</span>

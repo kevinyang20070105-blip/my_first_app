@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LocalizedText } from "../components/LocalizedText";
 import { capabilities, focusAreas, profile } from "../content/site-content";
+import { withBasePath } from "../site-url";
 
 export const metadata: Metadata = {
   title: "About / 关于",
   description: "About Kv—research approach, capabilities, and current focus across Web3 and AI.",
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "about" },
 };
 
 export default function AboutPage() {
@@ -99,7 +100,7 @@ export default function AboutPage() {
             <span className="lang lang-en" lang="en">No formal résumé was available in the workspace, so the site does not invent education, internships, awards, or project metrics. Once supplied, those fields and the download can be replaced centrally.</span>
           </p>
           <div className="inline-actions">
-            <a className="button button--primary" href="/Kv-Resume-Placeholder.txt" download>
+            <a className="button button--primary" href={withBasePath("/Kv-Resume-Placeholder.txt")} download>
               <span className="lang lang-zh">下载占位简历</span>
               <span className="lang lang-en" lang="en">Download placeholder</span>
               <span aria-hidden="true">↓</span>

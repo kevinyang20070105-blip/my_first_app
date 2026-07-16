@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { headers } from "next/headers";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { getSiteUrl } from "./site-url";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,10 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
-  const metadataBase = new URL(`${protocol}://${host}`);
+  const siteUrl = await getSiteUrl();
+  const metadataBase = new URL(`${siteUrl}/`);
+  const socialImageUrl = `${siteUrl}/og.png`;
 
   return {
     metadataBase,
@@ -40,18 +39,18 @@ export async function generateMetadata(): Promise<Metadata> {
       "Web3 研究",
       "人工智能",
     ],
-    alternates: { canonical: "/" },
+    alternates: { canonical: `${siteUrl}/` },
     openGraph: {
       type: "website",
       locale: "zh_CN",
       alternateLocale: "en_US",
-      url: "/",
+      url: siteUrl,
       siteName: "Kv — Research & Building",
       title: "Kv — Researching what becomes infrastructure next",
       description: "Web3 × AI research, independent building, and clear technical writing.",
       images: [
         {
-          url: "/og.png",
+          url: socialImageUrl,
           width: 1536,
           height: 1024,
           alt: "Kv — Web3 × AI researcher and independent builder",
@@ -62,9 +61,12 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Kv — Web3 × AI Researcher",
       description: "Researching open networks, intelligent systems, and the products between them.",
-      images: ["/og.png"],
+      images: [socialImageUrl],
     },
-    icons: { icon: "/favicon.png", shortcut: "/favicon.png" },
+    icons: {
+      icon: `${siteUrl}/favicon.png`,
+      shortcut: `${siteUrl}/favicon.png`,
+    },
   };
 }
 

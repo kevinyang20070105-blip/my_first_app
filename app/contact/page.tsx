@@ -7,7 +7,7 @@ import { profile } from "../content/site-content";
 export const metadata: Metadata = {
   title: "Contact / 联系",
   description: "Contact Kv for Web3 and AI research, internships, open-source work, and thoughtful collaboration.",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "contact" },
 };
 
 export default function ContactPage() {

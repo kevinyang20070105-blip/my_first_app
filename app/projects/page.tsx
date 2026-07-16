@@ -5,7 +5,7 @@ import { projects } from "../content/site-content";
 export const metadata: Metadata = {
   title: "Projects / 项目",
   description: "Selected Web3 and AI research prototypes and systems explorations by Kv.",
-  alternates: { canonical: "/projects" },
+  alternates: { canonical: "projects" },
 };
 
 export default function ProjectsPage() {

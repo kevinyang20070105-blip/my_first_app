@@ -5,7 +5,7 @@ import { articles } from "../content/site-content";
 export const metadata: Metadata = {
   title: "Writing / 文章",
   description: "Writing by Kv on trustworthy systems, Web3 products, and reproducible research.",
-  alternates: { canonical: "/writing" },
+  alternates: { canonical: "writing" },
 };
 
 export default function WritingPage() {

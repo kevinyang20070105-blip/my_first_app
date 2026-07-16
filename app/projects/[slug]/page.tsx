@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   return {
     title: project.title.en,
     description: project.summary.en,
-    alternates: { canonical: `/projects/${project.slug}` },
+    alternates: { canonical: `projects/${project.slug}` },
     openGraph: {
       title: `${project.title.en} — Kv`,
       description: project.summary.en,
-      url: `/projects/${project.slug}`,
+      url: `projects/${project.slug}`,
     },
   };
 }

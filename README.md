@@ -53,3 +53,12 @@ npm run build
 ```
 
 The output is Cloudflare Worker-compatible and the Sites configuration is stored in `.openai/hosting.json`.
+
+The repository also includes a GitHub Pages workflow. Pages builds use Next.js static export, apply the `/my_first_app` base path, and publish the generated `out` directory. Run the Pages build locally with:
+
+```bash
+GITHUB_PAGES=true \
+NEXT_PUBLIC_BASE_PATH=/my_first_app \
+NEXT_PUBLIC_SITE_URL=https://kevinyang20070105-blip.github.io/my_first_app \
+npm run build:pages
+```
